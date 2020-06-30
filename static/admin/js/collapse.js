@@ -12,7 +12,7 @@
     };
 
     window.addEventListener('load', function() {
-        // Add anchor tag for Show/Hide link
+        // Add anchor tags for Show/Hide link
         var fieldsets = document.querySelectorAll('fieldset.collapse');
         for (var i = 0; i < fieldsets.length; i++) {
             var elem = fieldsets[i];
@@ -30,7 +30,7 @@
                 h2.appendChild(document.createTextNode(')'));
             }
         }
-        // Add toggle to hide/show anchor tag
+        // Add toggle to hide/show anchor tags
         var toggleFunc = function(ev) {
             if (ev.target.matches('.collapse-toggle')) {
                 ev.preventDefault();

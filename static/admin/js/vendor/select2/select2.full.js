@@ -2109,9 +2109,9 @@ S2.define('select2/selection/search',[
 
     this.resizeSearch();
     if (searchHadFocus) {
-      var isTagInput = this.$element.find('[data-select2-tag]').length;
+      var isTagInput = this.$element.find('[data-select2-tags]').length;
       if (isTagInput) {
-        // fix IE11 bug where tag input lost focus
+        // fix IE11 bug where tags input lost focus
         this.$element.focus();
       } else {
         this.$search.focus();
@@ -3696,7 +3696,7 @@ S2.define('select2/data/tags',[
 
       if (tag != null) {
         var $option = self.option(tag);
-        $option.attr('data-select2-tag', true);
+        $option.attr('data-select2-tags', true);
 
         self.addOptions([$option]);
 
@@ -3731,7 +3731,7 @@ S2.define('select2/data/tags',[
   Tags.prototype._removeOldTags = function (_) {
     var tag = this._lastTag;
 
-    var $options = this.$element.find('option[data-select2-tag]');
+    var $options = this.$element.find('option[data-select2-tags]');
 
     $options.each(function () {
       if (this.selected) {
@@ -3772,7 +3772,7 @@ S2.define('select2/data/tokenizer',[
       // Normalize the data object so we can use it for checks
       var item = self._normalizeItem(data);
 
-      // Check if the data object already exists as a tag
+      // Check if the data object already exists as a tags
       // Select it if it doesn't
       var $existingOptions = self.$element.find('option').filter(function () {
         return $(this).val() === item.id;
@@ -3781,7 +3781,7 @@ S2.define('select2/data/tokenizer',[
       // If an existing option wasn't found for it, create the option
       if (!$existingOptions.length) {
         var $option = self.option(item);
-        $option.attr('data-select2-tag', true);
+        $option.attr('data-select2-tags', true);
 
         self._removeOldTags();
         self.addOptions([$option]);

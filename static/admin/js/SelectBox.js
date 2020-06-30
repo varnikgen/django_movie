@@ -19,7 +19,7 @@
             var box = document.getElementById(id);
             var node;
             $(box).empty(); // clear all options
-            var new_options = box.outerHTML.slice(0, -9); // grab just the opening tag
+            var new_options = box.outerHTML.slice(0, -9); // grab just the opening tags
             var cache = SelectBox.cache[id];
             for (var i = 0, j = cache.length; i < j; i++) {
                 node = cache[i];
