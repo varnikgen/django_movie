@@ -2,8 +2,17 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import View
 
-from .models import Movie, Category, Actor
+from .models import Movie, Category, Actor, Genre
 from .forms import ReviewFrom
+
+
+class GenreYear:
+    """Жанры и года выхода фильмов"""
+    def get_genres(self):
+        return Genre.object.all()
+
+    def get_years(self):
+        return Movie.objects.filter(draft=True)
 
 
 class MoviesView(ListView):
